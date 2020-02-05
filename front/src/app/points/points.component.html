@@ -1,0 +1,146 @@
+<h3>Главная страница</h3>
+
+<div id="c">
+    <canvas #canvas id="canvas" width="300px" height="300px" (click)="listener($event)"></canvas>
+</div>
+
+<div id="i">
+    <div id="inpwr">
+        <table id="input">
+            <tr>
+                <td>X</td>
+                <td>
+                    <div class="opts">
+                        <div class="opt">
+                            <label for="x-opt1">-2</label>
+                            <input type="radio" id="x-opt1" name="x" value="-2" (change)="selectX($event)">
+                        </div>
+                        <div class="opt">
+                            <label for="x-opt2">-1.5</label>
+                            <input type="radio" id="x-opt2" name="x" value="-1.5" (change)="selectX($event)">
+                        </div>
+                        <div class="opt">
+                            <label for="x-opt3">-1</label>
+                            <input type="radio" id="x-opt3" name="x" value="-1" (change)="selectX($event)">
+                        </div>
+                        <div class="opt">
+                            <label for="x-opt4">-0.5</label>
+                            <input type="radio" id="x-opt4" name="x" value="-0.5" (change)="selectX($event)">
+                        </div>
+                        <div class="opt">
+                            <label for="x-opt5">0</label>
+                            <input type="radio" id="x-opt5" name="x" value="0" (change)="selectX($event)">
+                        </div>
+                        <div class="opt">
+                            <label for="x-opt6">0.5</label>
+                            <input type="radio" id="x-opt6" name="x" value="0.5" (change)="selectX($event)">
+                        </div>
+                        <div class="opt">
+                            <label for="x-opt7">1</label>
+                            <input type="radio" id="x-opt7" name="x" value="1" (change)="selectX($event)">
+                        </div>
+                        <div class="opt">
+                            <label for="x-opt8">1.5</label>
+                            <input type="radio" id="x-opt8" name="x" value="1.5" (change)="selectX($event)">
+                        </div>
+                        <div class="opt">
+                            <label for="x-opt9">2</label>
+                            <input type="radio" id="x-opt9" name="x" value="2" (change)="selectX($event)">
+                        </div>
+
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Y</td>
+                <td>
+                    <input #yinp type="text" [value]="y" id="y" autocomplete="off" maxlength="7"
+                           (keypress)="keypress($event)">
+                    <div #yerror></div>
+                </td>
+            </tr>
+            <tr>
+                <td>R</td>
+                <td>
+                    <div class="opts">
+                        <div class="opt">
+                            <label for="r-opt1">-2</label>
+                            <input type="radio" id="r-opt1" name="r" value="-2" (change)="selectR($event)">
+                        </div>
+
+                        <div class="opt">
+                            <label for="r-opt2">-1.5</label>
+                            <input type="radio" id="r-opt2" name="r" value="-1.5" (change)="selectR($event)">
+                        </div>
+                        <div class="opt">
+                            <label for="r-opt3">-1</label>
+                            <input type="radio" id="r-opt3" name="r" value="-1" (change)="selectR($event)">
+                        </div>
+                        <div class="opt">
+                            <label for="r-opt4">-0.5</label>
+                            <input type="radio" id="r-opt4" name="r" value="-0.5" (change)="selectR($event)">
+                        </div>
+                        <div class="opt">
+                            <label for="r-opt5">0</label>
+                            <input type="radio" id="r-opt5" name="r" value="0" (change)="selectR($event)">
+                        </div>
+                        <div class="opt">
+                            <label for="r-opt6">0.5</label>
+                            <input type="radio" id="r-opt6" name="r" value="0.5" (change)="selectR($event)">
+                        </div>
+                        <div class="opt">
+                            <label for="r-opt7">1</label>
+                            <input type="radio" id="r-opt7" name="r" value="1" (change)="selectR($event)">
+                        </div>
+                        <div class="opt">
+                            <label for="r-opt8">1.5</label>
+                            <input type="radio" id="r-opt8" name="r" value="1.5" (change)="selectR($event)">
+                        </div>
+                        <div class="opt">
+                            <label for="r-opt9">2</label>
+                            <input type="radio" id="r-opt9" name="r" value="2" (change)="selectR($event)" checked>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+
+        </table>
+        <button (click)="check(yinp)">Проверить</button>
+    </div>
+</div>
+
+<div id="t">
+    <table id="points-table">
+        <caption>
+            История
+        </caption>
+
+        <colgroup>
+            <col class="val">
+            <col class="val">
+            <col class="val">
+            <col class="res">
+        </colgroup>
+
+        <tr id="first">
+            <th>X</th>
+            <th>Y</th>
+            <th>R</th>
+            <th>Результат</th>
+        </tr>
+
+        <tbody>
+        <tr *ngFor="let point of points" class="row">
+            <td>{{point.x}}</td>
+            <td>{{point.y}}</td>
+            <td>{{point.r}}</td>
+            <td>{{point.result ? "Попадание" : "Промах"}}</td>
+        </tr>
+        </tbody>
+
+    </table>
+</div>
+
+<error [hidden]="error.hidden" [message]="error.message"></error>
+<!--(keyup)="keyup($event)"-->
+<button id="exit-button" (click)="back()">Выйти</button>

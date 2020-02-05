@@ -1,0 +1,161 @@
+#canvas{
+    background: white;
+    border: 1px solid black;
+}
+
+#input {
+    border: 1px solid black;
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+
+#input td {
+    border: 2px solid black;
+}
+
+#y{
+    border: 2px solid black;
+    width: 95%;
+    left: 2px;
+    font-weight: bold;
+}
+
+.opts{
+    font-weight: bold;
+}
+
+#points-table{
+    text-align: center;
+    display: block;
+    width: 280px;
+    height: 300px;
+    border-collapse: collapse;
+}
+
+#first th{
+    border: 1px solid black;
+}
+
+tr.row td{
+    border: 1px solid black;
+}
+
+#points-table caption{
+    width: inherit;
+    font-weight: bold;
+    font-size: 15pt;
+}
+
+.val{
+    width: 20px;
+}
+
+.res{
+    width: 60px;
+}
+
+#first{
+    height: 30px;
+}
+
+.opt{
+    display: inline-block;
+    border: 2px solid black;
+}
+
+#exit-button{
+    position: fixed;
+    left: 2px;
+    top: 2px;
+}
+
+#inpwr{
+
+}
+
+#t{
+    width: 300px;
+    height: 300px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background: white;
+    margin: 0 auto;
+}
+
+#i{
+    width: 400px;
+
+    margin: 0 auto;
+}
+
+#c{
+    margin: 0 auto;
+    width: 300px;
+    height: 300px;
+}
+
+@media only screen and (max-width: 774px) {
+    #i{
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    #c{
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    #t{
+        display: block;
+    }
+
+    #exit-button{
+        font-size: 10pt;
+    }
+}
+
+@media only screen and (max-width: 1042px) and (min-width: 775px) {
+    #i{
+        display: inline-block;
+        margin: 0 auto;
+    }
+
+    #c{
+        display: inline-block;
+        margin: 0 auto;
+    }
+
+    #t{
+        margin-top: 10px;
+        display: block;
+    }
+
+
+    #exit-button{
+        font-size: 15pt;
+    }
+}
+
+@media only screen and (min-width: 1043px) {
+    #i{
+        display: inline-block;
+        margin: 0 auto;
+        margin-top: 100px;
+    }
+
+    #c{
+        display: inline-block;
+        float: left;
+        margin: 0 auto;
+    }
+
+    #t{
+        margin: 0 auto;
+        display: inline-block;
+        float: right;
+    }
+
+    #exit-button{
+        font-size: 20pt;
+    }
+}

@@ -1,0 +1,23 @@
+<header-comp></header-comp>
+<div [(class.hidden)]="logged">
+    <table class="auth-input">
+        <tr>
+            <td>Логин</td>
+            <input class="inp" type="text" [(ngModel)]="log" name="login" autocomplete="off"/>
+        </tr>
+        <tr>
+            <td>Пароль</td>
+            <input class="inp" type="password" [(ngModel)]="pass" name="password" autocomplete="off"/>
+        </tr>
+    </table>
+    <button (click)="login(log, pass)" class="button">Войти</button>
+    <button (click)="register(log, pass)" class="button">Зарегестрироваться</button>
+    <br>
+</div>
+<div [(class.hidden)]="!logged">
+    <div class="message">Вы уже вошли в систему</div>
+    <br>
+    <a class="link" routerLink="/main">На главную</a><br>
+    <button (click)="exit()" class="button" id="exit-button">Выйти</button>
+</div>
+<error [hidden]="error.hidden" [message]="error.message"></error>

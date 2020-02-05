@@ -1,0 +1,79 @@
+.hidden{
+    display: none;
+}
+
+.auth-input{
+    margin: 0 auto;
+}
+
+.link{
+    font-size: 15pt;
+    font-weight: bold;
+    color: blue;
+}
+
+.message{
+    font-size: 15pt;
+    color: black;
+}
+
+.button{
+    font-size: 15pt;
+}
+
+#exit-button{
+    position: fixed;
+    left: 2px;
+    top: 2px;
+    font-size: 20pt;
+}
+
+@media only screen and (max-width: 774px) {
+    .auth-input{
+        font-size: 12pt;
+        margin-bottom: 4px;
+    }
+    .inp{
+        height: 12px;
+    }
+
+
+    #exit-button{
+        font-size: 10pt;
+    }
+}
+
+
+@media only screen and (max-width: 1042px) and (min-width: 775px) {
+    .auth-input{
+        font-size: 15pt;
+        margin-bottom: 6px;
+    }
+    .inp{
+        height: 15px;
+    }
+
+
+    #exit-button{
+        font-size: 15pt;
+    }
+}
+
+
+@media only screen and (min-width: 1043px) {
+
+    .auth-input{
+        font-size: 20pt;
+        margin-bottom: 8px;
+
+    }
+    .inp{
+        height: 20px;
+    }
+
+
+    #exit-button{
+        font-size: 20pt;
+    }
+
+}
